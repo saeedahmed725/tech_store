@@ -1,0 +1,3 @@
+class Static {
+  Static._();
+}
