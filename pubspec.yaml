@@ -19,6 +19,9 @@ dependencies:
   shared_preferences: ^2.2.1
   bloc: ^8.1.2
   firebase_auth: ^4.10.1
+  dartz: ^0.10.1
+  flutter_svg: ^2.0.7
+  percent_indicator: ^4.2.3
 
 dev_dependencies:
   flutter_test:
@@ -33,12 +36,15 @@ flutter:
 
   uses-material-design: true
 
-#  assets:
+  assets:
+    - assets/image/onboarding/
 
 
-#
-#  fonts:
-#     - family: Schyler
-#       fonts:
+
+  fonts:
+    - family: Almarai
+      fonts:
+       - asset: assets/fonts/Almarai-Regular.ttf
+
 
 

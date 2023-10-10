@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:tech_store/Feature/auth/view/screen/launcher_screen.dart';
 
-import '../core/errors/exceptions.dart';
+import '../../core/errors/exceptions.dart';
 
 class RouteGenerator {
-  static const String splash = '/';
+  static const String launcher = '/';
   static const String onboarding = '/onboarding';
   static const String auth = '/auth';
 
@@ -12,8 +13,8 @@ class RouteGenerator {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case splash:
-      //return MaterialPageRoute(builder: (_) => const SplashScreen());
+      case launcher:
+      return MaterialPageRoute(builder: (_) => const LauncherScreen());
       default:
         throw RouteException('Route not found');
     }
