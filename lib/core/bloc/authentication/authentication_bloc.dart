@@ -4,12 +4,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 part 'authentication_event.dart';
+
 part 'authentication_state.dart';
 
-class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
+class AuthenticationBloc
+    extends Bloc<AuthenticationEvent, AuthenticationState> {
   User? user;
   late SharedPreferences prefs;
   late bool finishedOnBoarding;
+
   AuthenticationBloc() : super(const AuthenticationState.unauthenticated()) {
     on<CheckFirstRunEvent>((event, emit) async {
       prefs = await SharedPreferences.getInstance();
@@ -17,6 +20,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
       if (!finishedOnBoarding) {
         emit(const AuthenticationState.onboarding());
       } else {
+        emit(const AuthenticationState.unauthenticated());
         // check if user authenticated Or unauthenticated and emit states
       }
     });
